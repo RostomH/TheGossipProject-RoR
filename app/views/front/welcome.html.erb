@@ -7,10 +7,10 @@
 
 <div class="card">
 <% Gossip.all.each do |gossip| %>
-  <div class="card-header" style="width: 18rem;">
+  <div class="card-header" style="width: 25rem;">
     <%= gossip.title %>
   </div>
-  <div class="card-body">
+  <div class="card-body" style="width: 25rem;">
     <blockquote class="blockquote mb-0">
       <p><%= gossip.content %></p>
       <footer class="blockquote-footer">Un gossip raconté par <cite title="Source Title"><%= gossip.user.first_name %></cite></footer>
