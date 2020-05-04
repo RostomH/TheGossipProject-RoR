@@ -3,4 +3,8 @@
 
 <p>Voici la liste des potins : </p>
 
-<%= Gossip.first.user.first_name %>
+<% Gossip.all.each do |gossip| %>
+<%= "#{gossip.content} - Un gossip raconté par #{gossip.user.first_name}" %><br>
+<% end %>
+
+<%# Gossip.first(30).each do |gossip| %>
