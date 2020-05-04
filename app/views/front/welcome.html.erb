@@ -3,8 +3,19 @@
 
 <p>Voici la liste des potins : </p>
 
-<% Gossip.all.each do |gossip| %>
-<%= "#{gossip.content} - Un gossip raconté par #{gossip.user.first_name}" %><br>
-<% end %>
+<br>
 
-<%# Gossip.first(30).each do |gossip| %>
+<div class="card">
+<% Gossip.all.each do |gossip| %>
+  <div class="card-header" style="width: 18rem;">
+    <%= gossip.title %>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p><%= gossip.content %></p>
+      <footer class="blockquote-footer">Un gossip raconté par <cite title="Source Title"><%= gossip.user.first_name %></cite></footer>
+    </blockquote>
+  </div>
+  <br>
+  <% end %>
+</div>
