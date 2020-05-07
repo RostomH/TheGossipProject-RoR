@@ -1,0 +1,15 @@
+<br><h1>Gossip n°<%=@id%> écrit par  </h1>
+
+<p>Titre: <%= Gossip.find_by(id:@id).title %><br>
+Contenu : <%= Gossip.find_by(id:@id).content %><br>
+Auteur : <%= Gossip.find_by(id:@id).user.first_name %> <%= Gossip.find_by(id:@id).user.last_name %><br>
+Ville de l'auteur : <%= link_to "#{Gossip.find_by(id:@id).user.city.name}", city_path(Gossip.find(@id).user.city_id) %> </p>
+
+
+<%= link_to "Lien vers l'auteur", user_path(Gossip.find(@id).user_id) %> 
+
+<div class="row col-6">
+<%= form_tag gossip_path(@gossip.id), method: "delete" do %>
+<%= submit_tag "Supprimer ce gossip", {class: 'btn btn-danger btn-block'} %>
+<% end %>
+</div>

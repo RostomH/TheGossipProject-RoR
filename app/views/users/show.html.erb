@@ -1,0 +1,9 @@
+<br><h1>Voici les infos de l'auteur n°<%=@id%></h1>
+
+<p>Prénom : <%= Gossip.find(@id).user.first_name %><br>
+Nom : <%= Gossip.find(@id).user.last_name %><br>
+Description : <%= Gossip.find(@id).user.description %><br>
+Email : <%= Gossip.find(@id).user.email %><br> 
+Âge : <%= Gossip.find(@id).user.age %><br>
+Ville : <%= link_to "#{Gossip.find(@id).user.city.name}", city_path(Gossip.find(@id).user.city_id) %><br></p>
+

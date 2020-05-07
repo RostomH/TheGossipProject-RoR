@@ -1,11 +1,12 @@
+
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-3">Bienvenue <%= @first_name %> !</h1>
+    <h1 class="display-3">Bienvenue sur The Gossip Project !</h1>
       <h3>Restes à l'affût des derniers gossips de ton lycée, et balance tes infos confidentielles</h3>
   </div>
 </div>
 
-<p>Voici la liste des potins : </p>
+<p>Voici la liste des hot gossips : </p>  
 
 <% Gossip.all.each do |gossip| %>
 <br>
@@ -16,7 +17,9 @@
       <small>Date : <%= gossip.created_at %></small>
     </div>
     <p class="mb-1">Contenu : <%= gossip.content %></p>
-    <small>Auteur : <%= gossip.user.first_name %> | <%= link_to "Lien vers le gossip", show_gossip_path(gossip.id) %> | <%= link_to "Lien vers l'auteur", show_user_path(gossip.user.id) %> </small>
+    <small>Auteur : <%= gossip.user.first_name %> | <%= link_to "Lien vers le gossip", gossip_path(gossip.id) %> | <%= link_to "Lien vers l'auteur", user_path(gossip.user.id) %> </small>
   </a>
 </div>
 <% end %>
+
+

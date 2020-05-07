@@ -1,0 +1,5 @@
+<br><h1>Gossip n°<%=@id%></h1>
+
+<p>Prénom : <%= Gossip.find(@id).user.first_name %><br>
+Nom : <%= Gossip.find(@id).user.last_name %><br>
+Âge : <%= Gossip.find(@id).user.age %><br></p>

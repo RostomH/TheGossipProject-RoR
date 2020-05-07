@@ -1,3 +1,4 @@
+
 <h1>Bienvenue sur The Gossip Project !</h1> 
 <p>Ici c'est notre super site de potins, il est chouette, non ?</p><br>
 
@@ -5,15 +6,16 @@
 
 <br>
 
-<div class="card">
 <% Gossip.all.each do |gossip| %>
+<div class="card" style="width: 25rem;">
   <div class="card-header" style="width: 25rem;">
     <%= gossip.title %>
   </div>
   <div class="card-body" style="width: 25rem;">
     <blockquote class="blockquote mb-0">
       <p><%= gossip.content %></p>
-      <footer class="blockquote-footer">Un gossip raconté par <cite title="Source Title"><%= gossip.user.first_name %></cite></footer>
+      <footer class="blockquote-footer">Un gossip raconté par <cite title="Source Title"><%= gossip.user.first_name %></cite></footer><br>
+      <%= link_to "Lien vers le gossip", show_gossip_path(gossip.id) %>  |  <%= link_to "Lien vers l'auteur", show_user_path(gossip.user.id) %>
     </blockquote>
   </div>
   <br>

@@ -1,0 +1,6 @@
+<br><h1>Gossip n°<%=@id%></h1>
+
+<p>Auteur : <%= Gossip.find(@id).user.first_name %><br>
+Titre : <%= Gossip.find(@id).title %><br>
+Contenu : <%= Gossip.find(@id).content %><br></p>
+

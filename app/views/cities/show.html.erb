@@ -1,0 +1,30 @@
+<h1 class="display-4 ml-5 my-4">Voici les potins de la ville <%= City.find(@city).name %></h1>
+
+<table class="table table-striped mx-5 mt-5 w-75">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">User</th>
+      <th scope="col">Gossip title</th>
+      <th scope="col">Gossip content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% i = 1 %>
+    <% City.find(@city).users.each do |user| %>
+      <% user.gossips.each do |gossip| %>
+        <tr>
+          <th scope="row"><%= i %></th>
+          <td><%= user.first_name %> <%= user.last_name %></td>
+          <td><%= gossip.title %></td>
+          <td><em><%= gossip.content %></em></td>
+        </tr>
+        <% i += 1 %>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+

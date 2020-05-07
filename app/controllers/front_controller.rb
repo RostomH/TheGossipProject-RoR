@@ -7,8 +7,16 @@ class FrontController < ApplicationController
 
   def home
   end
-
+  
   def welcome
-    @first_name = params[:first_name]
+    @first_name = User.find_by(id: session[:user_id]).first_name
+  end
+
+  def showgossip
+    @id = params[:id]
+  end
+
+  def showuser
+    @id = params[:id]
   end
 end
